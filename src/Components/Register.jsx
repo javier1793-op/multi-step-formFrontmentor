@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import '../scss/registre.scss'
 import { Nav } from './Nav'
+import PersonalInfo from './PersonalInfo'
 
 const Register = () => {
   const [active, setActive] = useState(1)
@@ -13,7 +14,7 @@ const Register = () => {
                 />
             </section>
             <section className="form">
-                form
+                <PersonalInfo/>
             </section>
         </div>
     </>
