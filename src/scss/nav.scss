@@ -1,0 +1,44 @@
+.contentNav{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+.contentNav .item{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+.item .number{
+    width: 1.7rem;
+    height: 1.7rem;
+    border-radius: 50%;
+    color: var(--White);
+    border: 1px solid var(--White);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.number.active{
+    background: var(--Light-blue);
+    color: var(--Marine-blue);
+}
+.infoItem{
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+.infoItem .step{
+    text-transform: uppercase;
+    color: var(--Light-gray);
+    font-size: .7rem;
+    letter-spacing: 1px;
+}
+.infoItem .descriptionItem{
+    text-transform: uppercase;
+    color: var(--White);
+    font-size: .7rem;
+    letter-spacing: 2px;
+    font-weight: 700;
+}

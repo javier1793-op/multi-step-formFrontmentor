@@ -1,11 +1,16 @@
+import { useState } from 'react'
 import '../scss/registre.scss'
+import { Nav } from './Nav'
 
-const Registre = () => {
+const Register = () => {
+  const [active, setActive] = useState(1)
   return (
     <>
         <div className="contentRegister">
             <section className="nav">
-                navegation
+                <Nav
+                  active={active}
+                />
             </section>
             <section className="form">
                 form
@@ -15,4 +20,4 @@ const Registre = () => {
   )
 }
 
-export default Registre
+export default Register

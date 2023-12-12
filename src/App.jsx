@@ -1,6 +1,6 @@
 
 import './App.css'
-import Registre from './Components/Registre'
+import Register from './Components/Register'
 
 function App() {
 
@@ -8,7 +8,7 @@ function App() {
   return (
     <>
       <main>
-        <Registre/>
+        <Register/>
       </main>
     </>
   )
