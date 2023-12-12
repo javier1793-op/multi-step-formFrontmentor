@@ -1,0 +1,27 @@
+.contentRegister{
+    width: 65%;
+    height: 75vh;
+    background: var(--White);
+    border-radius: 20px;
+    display: flex;
+    padding: 1rem;
+    gap: 1rem;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+.contentRegister .nav{
+    width: 27%;
+    height: 100%;
+    background-image: url(../img/bg-sidebar-desktop.svg);
+    background-size: cover;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    padding: 2rem;
+}
+
+.contentRegister .form{
+    width: 73%;
+    height: 100%;
+    padding: 2rem;
+}
