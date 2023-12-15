@@ -56,4 +56,14 @@ button{
     background: var(--Marine-blue);
     cursor: pointer;
     font-size: .8rem;
+    margin-top: 1rem;
+}
+.boxLabel{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.boxLabel .labelError{
+    color: var(--Strawberry-red);
+    font-size: .8rem;
 }
