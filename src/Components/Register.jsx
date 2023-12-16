@@ -3,6 +3,9 @@ import "../scss/registre.scss";
 import { Nav } from "./Nav";
 import PersonalInfo from "./PersonalInfo";
 import Plan from "./Plan";
+import Arcade from '../img/icon-arcade.svg'
+import Advanced from '../img/icon-advanced.svg'
+import Pro from '../img/icon-pro.svg'
 
 const Register = () => {
   const [active, setActive] = useState(1);
@@ -14,30 +17,42 @@ const Register = () => {
       plan: [{
       monthly: [
         {
+          id:1,
           name: "Arcade",
           price: 9,
+          icon:`${Arcade}`
         },
         {
+          id:2,
           name: "Advanced",
           price: 12,
+          icon:`${Advanced}`
         },
         {
+          id:3,
           name: "Pro",
           price: 15,
+          icon:`${Pro}`
         },
       ],
       year: [
         {
+          id:4,
           name: "Arcade",
           price: 90,
+          icon:`${Arcade}`
         },
         {
+          id:5,
           name: "Advanced",
           price: 120,
+          icon:`${Advanced}`
         },
         {
+          id:6,
           name: "Pro",
           price: 150,
+          icon:`${Pro}`
         },
       ],
     }],
@@ -79,7 +94,6 @@ const Register = () => {
     }],
 
   }});
-  console.log(data)
   return (
     <>
       <div className="contentRegister">
@@ -96,6 +110,7 @@ const Register = () => {
           />}
          {active === 2 && <Plan
             setActive={setActive}
+            plan={data.infoPersonal.plan}
          />}
         </section>
       </div>
