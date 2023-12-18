@@ -7,12 +7,10 @@ const PersonalInfo = ({ name, email, phone, setData, setActive }) => {
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
+  
     setData((prevData) => ({
       ...prevData,
-      infoPersonal: {
-        ...prevData.infoPersonal,
-        [name]: value,
-      },
+      [name]: value,
     }));
   };
 

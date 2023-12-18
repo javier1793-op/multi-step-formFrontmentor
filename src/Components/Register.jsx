@@ -9,11 +9,14 @@ import Pro from '../img/icon-pro.svg'
 
 const Register = () => {
   const [active, setActive] = useState(1);
+  const [subscription, setSubscription] = useState({
+    name:'',
+    email:'',
+    phone:'',
+    plan:{}
+  })
   const [data, setData] = useState({
     infoPersonal: {
-      name: "",
-      email: "",
-      phone: "",
       plan: [{
       monthly: [
         {
@@ -94,6 +97,7 @@ const Register = () => {
     }],
 
   }});
+  console.log(subscription)
   return (
     <>
       <div className="contentRegister">
@@ -102,15 +106,16 @@ const Register = () => {
         </section>
         <section className="form">
           {active === 1 &&  <PersonalInfo
-            name={data.infoPersonal.name}
-            email={data.infoPersonal.email}
-            phone={data.infoPersonal.phone}
+            name={subscription.name}
+            email={subscription.email}
+            phone={subscription.phone}
             setActive={setActive}
-            setData={setData}
+            setData={setSubscription}
           />}
          {active === 2 && <Plan
             setActive={setActive}
             plan={data.infoPersonal.plan}
+            setSubscription={setSubscription}
          />}
         </section>
       </div>

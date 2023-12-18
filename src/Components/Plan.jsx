@@ -1,16 +1,25 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "../scss/plan.scss";
 import ItemPlan from "./ItemPlan";
 
-const Plan = ({ setActive, plan }) => {
+const Plan = ({ setActive, plan,  setSubscription }) => {
   const [isChecked, setChecked] = useState(false);
+  const [planSelect, setPlanSelect] = useState({})
   const monthlyPlan = plan && plan.length > 0 ? plan[0].monthly : [];
   const yearlyPlan = plan && plan.length > 0 ? plan[0].year : [];
 
   const handleSwitchToggle = () => {
     setChecked(!isChecked);
   };
-  console.log(isChecked);
+
+  useEffect(() => {
+    setSubscription((prevData) => ({
+      ...prevData,
+      plan: planSelect,
+    }));
+  }, [planSelect])
+  
+
 
   return (
     <>
@@ -29,6 +38,7 @@ const Plan = ({ setActive, plan }) => {
                   price={item.price}
                   typePlan={"yr"}
                   discount={'2 months free'}
+                  setPlanSelect={setPlanSelect}
                 />
               ))
             : monthlyPlan.map((item) => (
@@ -38,6 +48,8 @@ const Plan = ({ setActive, plan }) => {
                   name={item.name}
                   price={item.price}
                   typePlan={"mo"}
+                  discount={''}
+                  setPlanSelect={setPlanSelect}
                 />
               ))}
         </section>
