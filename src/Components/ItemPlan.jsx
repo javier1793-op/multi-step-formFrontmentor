@@ -3,6 +3,7 @@ import { useState } from "react"
 
 const ItemPlan = ({icon,name,price,typePlan,discount,setPlanSelect}) => {
 
+  const [active, setActive] = useState('')
   const [plan, setPlan] = useState({
     name:name,
     price:price,
@@ -12,10 +13,11 @@ const ItemPlan = ({icon,name,price,typePlan,discount,setPlanSelect}) => {
 
   const handleClickPlan =()=>{
     setPlanSelect(plan)
+    setActive('active')
   }
   return (
     <>
-    <section className='itemPlan' onClick={handleClickPlan}>
+    <section className={`itemPlan ${active}`} onClick={handleClickPlan}>
             <img src={icon} alt="icono" className="iconImg"/>
             <section className="descriptionTitemPlan">
               <span className="nameItem">{name}</span>

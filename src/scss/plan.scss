@@ -32,6 +32,9 @@
     border: 1px solid var( --Light-gray);
     cursor: pointer;
 }
+.itemPlan.active{
+  border: 1px solid var(--Marine-blue);
+}
 .itemPlan:hover{
     border: 1px solid var(--Marine-blue);
 }

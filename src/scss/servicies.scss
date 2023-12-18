@@ -1,0 +1,43 @@
+.planServicies{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+.contenItemServicies{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border: 1px solid var(--Marine-blue);
+    border-radius: 5px;
+    padding: .9rem 1rem;
+    cursor: pointer;
+}
+.contenItemServicies:hover{
+    background:var( --Magnolia);
+    border-color: var(--Purplish-blue);
+}
+.contenItemServicies.active{
+    background:var( --Magnolia);
+    border-color: var(--Purplish-blue);
+}
+.infoServicies{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+.descriptionServicies{
+    display: flex;
+    flex-direction: column;
+}
+.titleServicies{
+    font-weight: 700;
+    color: var(--Marine-blue);
+}
+.dataServicies{
+    font-size: .8rem;
+    color: var(--Cool-gray);
+}
+.priceServicies{
+    font-size: .8rem;
+    color: var(--Purplish-blue);
+}

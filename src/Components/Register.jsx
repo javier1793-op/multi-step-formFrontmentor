@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "../scss/registre.scss";
 import { Nav } from "./Nav";
 import PersonalInfo from "./PersonalInfo";
@@ -6,6 +6,7 @@ import Plan from "./Plan";
 import Arcade from '../img/icon-arcade.svg'
 import Advanced from '../img/icon-advanced.svg'
 import Pro from '../img/icon-pro.svg'
+import Servicies from "./Servicies";
 
 const Register = () => {
   const [active, setActive] = useState(1);
@@ -15,6 +16,10 @@ const Register = () => {
     phone:'',
     plan:{}
   })
+ 
+ 
+  
+
   const [data, setData] = useState({
     infoPersonal: {
       plan: [{
@@ -62,16 +67,19 @@ const Register = () => {
       servicies: [{
       monthly: [
         {
+          id:7,
           name: "Online servicies",
           description:'Access to multiplayer games',
           price: 1,
         },
         {
+          id:8,
           name: "Larger storage",
           description:'Estra 1tb of cloud save',
           price: 2,
         },
         {
+          id:9,
           name: "Customizable profile",
           description:'custom theme on your profile',
           price: 2,
@@ -79,16 +87,19 @@ const Register = () => {
       ],
       year: [
         {
+          id:10,
           name: "Online servicies",
           description:'Access to multiplayer games',
           price: 10,
         },
         {
+          id:11,
           name: "Larger storage",
           description:'Estra 1tb of cloud save',
           price: 20,
         },
         {
+          id:12,
           name: "Customizable profile",
           description:'custom theme on your profile',
           price: 20,
@@ -97,7 +108,6 @@ const Register = () => {
     }],
 
   }});
-  console.log(subscription)
   return (
     <>
       <div className="contentRegister">
@@ -116,6 +126,13 @@ const Register = () => {
             setActive={setActive}
             plan={data.infoPersonal.plan}
             setSubscription={setSubscription}
+         />}
+         {active === 3 && <Servicies
+            setActive={setActive}
+            servicies={data.infoPersonal.servicies
+              }
+            setSubscription={setSubscription}
+            typeServicies={subscription.plan.typePlan}
          />}
         </section>
       </div>
