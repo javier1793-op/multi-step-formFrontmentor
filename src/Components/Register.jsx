@@ -14,11 +14,12 @@ const Register = () => {
     name:'',
     email:'',
     phone:'',
-    plan:{}
+    plan:{},
+    servicies:{}
   })
  
  
-  
+  console.log(subscription)
 
   const [data, setData] = useState({
     infoPersonal: {

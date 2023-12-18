@@ -1,12 +1,25 @@
+import { useState } from "react"
 
 
-const ItemServicies = ({name,description,price,typeServicies}) => {
+const ItemServicies = ({name,description,price,typeServicies,setServicieSelect}) => {
+    const [active, setActive] = useState(false)
+  const [ser, setSer] = useState({
+    name:name,
+    price:price,
+    typeServicies:typeServicies,
+  })
+
+  const handleClickPlan =()=>{
+    setServicieSelect(ser)
+    setActive(!active)
+  }
   return (
     <>
-        <div className="contenItemServicies">
+        <div className={`contenItemServicies ${active?'active':''}`}>
             <section className="infoServicies">
                 <input
               type="checkbox"
+              onChange={handleClickPlan}
             />
         <section className="descriptionServicies">
             <span className="titleServicies">

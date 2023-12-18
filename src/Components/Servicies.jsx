@@ -1,5 +1,6 @@
 import ItemServicies from "./ItemServicies";
 import "../scss/servicies.scss";
+import { useEffect, useState } from "react";
 
 const Servicies = ({
   setActive,
@@ -11,6 +12,16 @@ const Servicies = ({
     servicies && servicies.length > 0 ? servicies[0].year : [];
   const serviciesAddMonthly =
     servicies && servicies.length > 0 ? servicies[0].monthly : [];
+
+    const [serviceSelect, setServicieSelect] = useState({})
+
+    useEffect(() => {
+        setSubscription((prevData) => ({
+          ...prevData,
+          servicies: serviceSelect,
+        }));
+      }, [serviceSelect])
+
   return (
     <>
       <div className="contentPlan">
@@ -27,6 +38,7 @@ const Servicies = ({
                   description={item.description}
                   price={item.price}
                   typeServicies={'mo'}
+                  setServicieSelect={setServicieSelect}
                 />
               ))
             : serviciesAddYear.map((item) => (
@@ -36,6 +48,7 @@ const Servicies = ({
                   description={item.description}
                   price={item.price}
                   typeServicies={'yr'}
+                  setServicieSelect={setServicieSelect}
                 />
               ))}
         </section>
