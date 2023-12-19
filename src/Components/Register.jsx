@@ -8,6 +8,7 @@ import Advanced from '../img/icon-advanced.svg'
 import Pro from '../img/icon-pro.svg'
 import Servicies from "./Servicies";
 import Summary from "./Summary";
+import Confirm from "./Confirm";
 
 const Register = () => {
   const [active, setActive] = useState(1);
@@ -140,6 +141,7 @@ const Register = () => {
             setActive={setActive}
             subscription={subscription}
          />}
+         {active === 5 && <Confirm/>}
         </section>
       </div>
     </>

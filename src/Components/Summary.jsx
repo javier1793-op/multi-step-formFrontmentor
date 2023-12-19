@@ -16,7 +16,8 @@ const Summary = ({ setActive, subscription }) => {
   return (
     <>
       <div className="contentPlan">
-        <h1 className="titlePersonalInfo">Finishing up</h1>
+        <section className="contentSumm">
+          <h1 className="titlePersonalInfo">Finishing up</h1>
         <span className="descriptionPersonalInfo">
           Double-check everything looks OK beforce confirming
         </span>
@@ -66,6 +67,8 @@ const Summary = ({ setActive, subscription }) => {
             </span>
           </section>
         </section>
+        </section>
+        
         <section className="buttonAvan">
           <span
             className="textBack"
