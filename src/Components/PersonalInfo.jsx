@@ -120,6 +120,7 @@ const PersonalInfo = ({ name, email, phone, setData, setActive }) => {
           </section>
         </form>
       </div>
+   
     </>
   );
 };

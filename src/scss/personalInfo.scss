@@ -67,3 +67,16 @@ button{
     color: var(--Strawberry-red);
     font-size: .8rem;
 }
+@media (max-width:1100px){
+    .contentPersonalInfo{
+        padding: 0;
+    }
+   
+    .buttonPersonalInfodesk{
+        width: 100%;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        background: var(--White);
+    }
+}
