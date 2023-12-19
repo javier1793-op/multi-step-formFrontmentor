@@ -13,7 +13,7 @@ const Servicies = ({
   const serviciesAddMonthly =
     servicies && servicies.length > 0 ? servicies[0].monthly : [];
 
-    const [serviceSelect, setServicieSelect] = useState({})
+    const [serviceSelect, setServicieSelect] = useState([])
 
     useEffect(() => {
         setSubscription((prevData) => ({
@@ -39,6 +39,7 @@ const Servicies = ({
                   price={item.price}
                   typeServicies={'mo'}
                   setServicieSelect={setServicieSelect}
+                  serviceSelect={serviceSelect}
                 />
               ))
             : serviciesAddYear.map((item) => (
@@ -49,6 +50,7 @@ const Servicies = ({
                   price={item.price}
                   typeServicies={'yr'}
                   setServicieSelect={setServicieSelect}
+                  serviceSelect={serviceSelect}
                 />
               ))}
         </section>

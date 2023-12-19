@@ -7,6 +7,7 @@ import Arcade from '../img/icon-arcade.svg'
 import Advanced from '../img/icon-advanced.svg'
 import Pro from '../img/icon-pro.svg'
 import Servicies from "./Servicies";
+import Summary from "./Summary";
 
 const Register = () => {
   const [active, setActive] = useState(1);
@@ -134,6 +135,10 @@ const Register = () => {
               }
             setSubscription={setSubscription}
             typeServicies={subscription.plan.typePlan}
+         />}
+         {active === 4 && <Summary
+            setActive={setActive}
+            subscription={subscription}
          />}
         </section>
       </div>

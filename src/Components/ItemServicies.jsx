@@ -1,45 +1,52 @@
-import { useState } from "react"
+import { useState } from "react";
 
+const ItemServicies = ({
+  name,
+  description,
+  price,
+  typeServicies,
+  setServicieSelect,
+  serviceSelect
+}) => {
+  const [active, setActive] = useState(false);
 
-const ItemServicies = ({name,description,price,typeServicies,setServicieSelect}) => {
-    const [active, setActive] = useState(false)
   const [ser, setSer] = useState({
-    name:name,
-    price:price,
-    typeServicies:typeServicies,
-  })
+    name: name,
+    price: price,
+    typeServicies: typeServicies,
+  });
 
-  const handleClickPlan =()=>{
-    setServicieSelect(ser)
-    setActive(!active)
-  }
+  const handleClickPlan = () => {
+    setActive(!active);
+    if (active) {
+      let deleteArray = serviceSelect.filter((elem) => elem.name !== ser.name);
+      setServicieSelect(deleteArray);
+    } else {
+      setServicieSelect((prevArray) => [...prevArray, ser]); 
+    }
+  };
+
+
   return (
     <>
-        <div className={`contenItemServicies ${active?'active':''}`}>
-            <section className="infoServicies">
-                <input
-              type="checkbox"
-              onChange={handleClickPlan}
-            />
-        <section className="descriptionServicies">
-            <span className="titleServicies">
-                {name}
-            </span>
-            <span className="dataServicies">
-                {description}
-            </span>
+      <div className={`contenItemServicies ${active ? "active" : ""}`}>
+        <section className="infoServicies">
+          <input type="checkbox" onChange={handleClickPlan} />
+          <section className="descriptionServicies">
+            <span className="titleServicies">{name}</span>
+            <span className="dataServicies">{description}</span>
+          </section>
         </section>
-            </section>
-        
-        <section className="priceServicies">
-            {'+$'}
-            {price}
-            {'/'}
-            {typeServicies}
-        </section>
-        </div>
-    </>
-  )
-}
 
-export default ItemServicies
+        <section className="priceServicies">
+          {"+$"}
+          {price}
+          {"/"}
+          {typeServicies}
+        </section>
+      </div>
+    </>
+  );
+};
+
+export default ItemServicies;
